@@ -24,19 +24,19 @@ describe("example to-do app", () => {
     // We use the `cy.get()` command to get all elements that match the selector.
     // Then, we use `should` to assert that there are two matched items,
     // which are the two default items.
-    cy.get(".todo-list li").should("have.length", 2);
+    cy.get(".todo-list li").should("have.length", 20);
 
     // We can go even further and check that the default todos each contain
     // the correct text. We use the `first` and `last` functions
     // to get just the first and last matched elements individually,
     // and then perform an assertion with `should`.
     cy.get(".todo-list li").first().should("have.text", "Pay electric bill");
-    cy.get(".todo-list li").last().should("have.text", "Walk the dog");
+    cy.get(".todo-list li").last().should("have.text", "Walk the dog0");
   });
 
   it("can add new todo items", () => {
     // We'll store our item text in a variable so we can reuse it
-    const newItem = "Feed the cat";
+    const newItem = "Feed the cat0";
 
     // Let's get the input element and use the `type` command to
     // input our new list item. After typing the content of our item,
@@ -64,7 +64,7 @@ describe("example to-do app", () => {
     // In order to check the item, we'll find the <input> element for this <label>
     // by traversing up the dom to the parent element. From there, we can `find`
     // the child checkbox <input> element and use the `check` command to check it.
-    cy.contains("Pay electric bill")
+    cy.contains("Pay electric bill0")
       .parent()
       .find("input[type=checkbox]")
       .check();
@@ -85,7 +85,7 @@ describe("example to-do app", () => {
       // Since we want to perform multiple tests that start with checking
       // one element, we put it in the beforeEach hook
       // so that it runs at the start of every test.
-      cy.contains("Pay electric bill")
+      cy.contains("Pay electric bill0")
         .parent()
         .find("input[type=checkbox]")
         .check();
@@ -101,7 +101,7 @@ describe("example to-do app", () => {
       cy.get(".todo-list li")
         .should("have.length", 1)
         .first()
-        .should("have.text", "Walk the dog");
+        .should("have.text", "Walk the dog0");
 
       // For good measure, let's also assert that the task we checked off
       // does not exist on the page.
@@ -116,7 +116,7 @@ describe("example to-do app", () => {
       cy.get(".todo-list li")
         .should("have.length", 1)
         .first()
-        .should("have.text", "Pay electric bill");
+        .should("have.text", "Pay electric bill0");
 
       cy.contains("Walk the dog").should("not.exist");
     });
@@ -134,7 +134,7 @@ describe("example to-do app", () => {
       // in the list and our element does not exist
       cy.get(".todo-list li")
         .should("have.length", 1)
-        .should("not.have.text", "Pay electric bill");
+        .should("not.have.text", "Pay electric bill0");
 
       // Finally, make sure that the clear button no longer exists.
       cy.contains("Clear completed").should("not.exist");
