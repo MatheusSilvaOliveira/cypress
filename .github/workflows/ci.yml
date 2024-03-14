@@ -26,5 +26,5 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: "Matheus Oliveira"
-          SLACK_TITLE: "Testando Integração"
+          SLACK_TITLE: "Testando Anexo de artefatos"
           SLACK_MESSAGE: "Deu Certo!!!"
