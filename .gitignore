@@ -1,12 +1,1 @@
-A remoção do bônus disponível após a expiração da promoção deve ser registrada no histórico do usuário (minhas promoções) para referência futura.
-
-A funcionalidade deve ser testada em diferentes cenários, incluindo casos em que o usuário está ativamente utilizando o bônus no momento da expiração da promoção.
-
-Deverá ser adicionado um texto nas regras da promoção informando que o bônus será zerado/removido após a expiração da promoção.
-
-Após a expiração da promoção associada a um bônus, o bônus disponível para o usuário deve ser removido automaticamente.
-
-O saldo do usuário deve ser ajustado adequadamente, refletindo a remoção do bônus.
-
-
-VERIFICAR O GROUP BY NO CRON. ACHO QUE NAO ESTA FAZENDO SENTIDO JA QUE SO PODEMOS TER UMA PROMO COM STATUS 1, E MESMO QUE OCORRAM DUAS, O SISTEMA NAO ESTA SOMANDO OS SALDO BONUS, O QUE FAZ ELE PEGAR APENAS A QUE POSSUI UM ID MENOR
+/node_modules/*
