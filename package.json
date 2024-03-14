@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "testing": "cypress run --browser chrome --spec cypress/e2e/1-getting-started/**.js"
+  },
+  "dependencies": {
+    "cypress": "^13.7.0",
+    "cypress-mochawesome-reporter": "^3.8.2"
+  }
+}
