@@ -14,13 +14,13 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
-      - name: Cypress run
+      - name: Generate Artfacts
         uses: actions/upload-artifact@v4
         # add the line below to store screenshots only on failures
-        if: always()
+        if: failure()
         with:
-          name: cypress-screenshots
-          path: cypress/screenshots
+          name: cypress-reports
+          path: cypress/reports/html
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
