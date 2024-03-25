@@ -1,14 +1,13 @@
-name: Tests Run
+name: Repository Dispacth
 on:
-  workflow_dispatch:
+  repository_dispatch:
+    types: [Quero-ver-se-da-certo]
 jobs:
-  cypress-run:
+  cypress-run-dispacth-repository:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
       - name: Generate Artfacts
@@ -18,11 +17,4 @@ jobs:
         with:
           name: cypress-reports
           path: cypress/reports/html
-      - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
-        if: always()
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: "Matheus Oliveira"
-          SLACK_TITLE: "Testando Anexo de artefatos"
-          SLACK_MESSAGE: "Deu Certo!!!"
+
