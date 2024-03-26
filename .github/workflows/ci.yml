@@ -2,6 +2,7 @@ name: Repository Dispacth
 on:
   repository_dispatch:
     types: [my-event]
+  workflow_dispatch:
 jobs:
   cypress-run-dispacth-repository:
     runs-on: ubuntu-22.04
